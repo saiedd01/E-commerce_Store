@@ -12,6 +12,7 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(35),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children:[
 
               const SizedBox(
@@ -53,6 +54,32 @@ class Login extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8))),
                 ),
               ),
+
+              const SizedBox(
+                height: 33,
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Do not have account?",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                  ),
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child:
+                      Text("Sign up",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                      ),
+                      )
+                  ),
+                ],
+              )
             ],
           ),
         ),
