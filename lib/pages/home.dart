@@ -1,3 +1,4 @@
+import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -5,16 +6,55 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            "Home",
-        style: TextStyle(
-          fontSize: 16,
-        ),
-        ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            Row(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      child: Text(
+                        "2",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      ),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(211, 167, 255, 193),
+                        shape: BoxShape.circle
+                      ),
+                    ),
+                    IconButton(onPressed: () {},
+                      icon: Icon(Icons.add_shopping_cart,
+                      ),
+                    ),
+                  ],
+                ),
 
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Text(
+                      "150",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+          title: Text(
+              "Home",
+          style: TextStyle(
+            fontSize: 18,
+          ),
+          ),
+          backgroundColor: appbar_Green,
 
+        ),
       ),
     );
   }
