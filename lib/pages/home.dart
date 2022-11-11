@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 2 / 2,
               crossAxisSpacing: 10,
-              mainAxisSpacing: 25),
+              mainAxisSpacing: 33),
           itemCount: 16,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
@@ -26,13 +26,16 @@ class Home extends StatelessWidget {
                     child: Image.asset("assets/img/Ag.jpg")),
                footer: GridTileBar(
                  trailing: IconButton(
-                   onPressed: (){},
-                   color: Color.fromARGB(255, 62, 94, 70), 
-                   icon: Icon(Icons.add),
-
+                     onPressed: (){},
+                     color: Colors.black,
+                     icon: Icon(Icons.add),
+                 ),
+                 leading: Text("\$12.5"),
+                 title: Text(
+                   "",
+                 ),
                  ),
                ),
-              )
             );
           },
         ),
@@ -168,7 +171,7 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(
-                      "150",
+                      "\$25",
                     style: TextStyle(
                       fontSize: 18,
                     ),
