@@ -8,7 +8,25 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+         backgroundColor: Colors.black54,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: AssetImage("assets/img/img2.jpg"),
+                    
+                ),
+              ),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           actions: [
             Row(
