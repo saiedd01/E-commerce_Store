@@ -1,3 +1,4 @@
+import 'package:e_commerce/model/product.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -16,14 +17,14 @@ class Home extends StatelessWidget {
               childAspectRatio: 2 / 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 33),
-          itemCount: 16,
+          itemCount: Products.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {} ,
               child: GridTile(
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
-                    child: Image.asset("assets/img/Ag.jpg")),
+                    child: Image.asset(Products[index].imgPath)),
                footer: GridTileBar(
                  trailing: IconButton(
                      onPressed: (){},
