@@ -9,20 +9,39 @@ class Home extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         drawer: Drawer(
-         backgroundColor: Colors.black54,
+         backgroundColor: Colors.black,
           child: Column(
             children: [
-              SizedBox(
-                height: 15,
-              ),
-              Container(
+              UserAccountsDrawerHeader(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
-                    image: AssetImage("assets/img/img2.jpg"),
-                    
+                      image: AssetImage(
+                          "assets/img/black.jpeg",
+                      ),
+                      fit: BoxFit.cover),
                 ),
-              ),
+                currentAccountPicture: CircleAvatar(
+                    radius: 55,
+                    backgroundImage: AssetImage(
+                        "assets/img/img1.jpeg",
+                    ),
+                ),
+
+                accountName:
+                  Text(
+                    "saied 🇪🇦🇦🇷",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.white,
+                    ),
+                  ),
+                  accountEmail: Text(
+                    "@_saiied_",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white.withOpacity(0.5),
+                    ),
+                  ),
               ),
             ],
           ),
