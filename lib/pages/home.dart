@@ -13,12 +13,27 @@ class Home extends StatelessWidget {
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 3 / 2,
+              childAspectRatio: 2 / 2,
               crossAxisSpacing: 10,
-              mainAxisSpacing: 33),
-          itemCount: 4,
+              mainAxisSpacing: 25),
+          itemCount: 16,
           itemBuilder: (BuildContext context, int index) {
-            return Container();
+            return GestureDetector(
+              onTap: () {} ,
+              child: GridTile(
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset("assets/img/Ag.jpg")),
+               footer: GridTileBar(
+                 trailing: IconButton(
+                   onPressed: (){},
+                   color: Color.fromARGB(255, 62, 94, 70), 
+                   icon: Icon(Icons.add),
+
+                 ),
+               ),
+              )
+            );
           },
         ),
         ),
