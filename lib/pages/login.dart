@@ -1,3 +1,4 @@
+import 'package:e_commerce/pages/register.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce/shared/custom_textfield.dart';
@@ -71,7 +72,13 @@ class Login extends StatelessWidget {
                     ),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Register()),
+                          );
+                        },
                         child:
                         Text("Sign up",
                         style: TextStyle(

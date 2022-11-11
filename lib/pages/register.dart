@@ -1,3 +1,4 @@
+import 'package:e_commerce/pages/login.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce/shared/custom_textfield.dart';
@@ -82,7 +83,13 @@ class Register extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()),
+                            );
+                          },
                           child:
                           Text("Log in",
                             style: TextStyle(
