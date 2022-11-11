@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:e_commerce/shared/custom_textfield.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -10,29 +11,23 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(35),
           child: Column(
-            children: [
-              const SizedBox(
+            children:const[
+              SizedBox(
                   height: 70,
               ),
-              TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  //obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Enter Your E-mail : ",
-                    // To delete borders
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: Divider.createBorderSide(
-                          context,
-                      ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                    ),
-                    filled: true,
-                    contentPadding: const EdgeInsets.all(8),
-                  ))
+              CTextField(
+                textInputTypeee: TextInputType.emailAddress,
+                isPassword: false,
+                hinttexttt: "Enter Your Email : ",
+              ),
+              SizedBox(
+                height: 33,
+              ),
+              CTextField(
+                textInputTypeee: TextInputType.text,
+                isPassword: true,
+                hinttexttt: "Enter Your Password : ",
+              ),
             ],
           ),
         ),
