@@ -11,38 +11,102 @@ class Home extends StatelessWidget {
         drawer: Drawer(
          backgroundColor: Colors.black,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                          "assets/img/black.jpeg",
-                      ),
-                      fit: BoxFit.cover),
-                ),
-                currentAccountPicture: CircleAvatar(
-                    radius: 55,
-                    backgroundImage: AssetImage(
-                        "assets/img/img1.jpeg",
-                    ),
-                ),
+              Column(
+                children: [
 
-                accountName:
-                  Text(
-                    "saied 🇪🇦🇦🇷",
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
+                  UserAccountsDrawerHeader(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                              "assets/img/Demon.jpeg",
+                          ),
+                          fit: BoxFit.cover),
                     ),
-                  ),
-                  accountEmail: Text(
-                    "@_saiied_",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white.withOpacity(0.5),
+                    currentAccountPicture: CircleAvatar(
+                        radius: 55,
+                        backgroundImage: AssetImage(
+                            "assets/img/img1.jpeg",
+                        ),
                     ),
+
+                    accountName:
+                      Text(
+                        "saied 🇪🇦🇦🇷",
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                      accountEmail: Text(
+                        "@_saiied_",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white.withOpacity(0.5),
+                        ),
+                      ),
                   ),
+                  ListTile(
+                      title: Text(
+                          "Home",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(Icons.home,
+                      color: Colors.cyan,
+                      ),
+                      onTap: () {},
+                  ),
+                  ListTile(
+                      title: Text(
+                          "My products",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(Icons.add_shopping_cart,
+                      color: Colors.cyan,
+                      ),
+                      onTap: () {}
+                  ),
+                  ListTile(
+                      title: Text(
+                          "About",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(Icons.help_center,
+                      color: Colors.cyan,
+                      ),
+                      onTap: () {}
+                  ),
+                  ListTile(
+                      title: Text(
+                          "Logout",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
+                      leading: Icon(Icons.exit_to_app,
+                      color: Colors.cyan,
+                      ),
+                      onTap: () {}
+                  ),
+                ],
               ),
+            Container(
+              margin: EdgeInsets.only(bottom: 15),
+              child: Text(
+                "Developed by Saied Ahmed © 2022",
+                style: TextStyle(
+                  color: Colors.cyan,
+                  fontSize: 16,
+                ),
+              ),
+            )
             ],
           ),
         ),
