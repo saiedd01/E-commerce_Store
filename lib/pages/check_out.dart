@@ -44,17 +44,32 @@ class CheckOut extends StatelessWidget {
                         backgroundImage:AssetImage(collect.selectedProducts[index].imgPath),
                         backgroundColor: Colors.white.withOpacity(0.5),),
                       trailing: IconButton(
-                          onPressed: () { },
+                          onPressed: ()
+                          {
+                            collect.delete(collect.selectedProducts[index]);
+                          },
                           icon: Icon(Icons.remove)),
                     ),
                   );
-                },
-              ),
+                }),
             ),
-          )
+          ),
+          ElevatedButton(onPressed: (){},
+              child: Text(
+                "Pay\$ ${collect.price}",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Btn_pink),
+              padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8))),
+            ),
+          ),
         ],
       ),
-
     );
   }
 }
