@@ -2,6 +2,7 @@ import 'package:e_commerce/model/product.dart';
 import 'package:e_commerce/pages/details_screen.dart';
 import 'package:e_commerce/provider/cart.dart';
 import 'package:e_commerce/shared/colors.dart';
+import 'package:e_commerce/shared/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -162,40 +163,9 @@ class Home extends StatelessWidget {
         ),
         appBar: AppBar(
           actions: [
-                   Row(
-                    children: [
-                      Stack(
-                        children: [
-                          Container(
-                            child: Text(
-                              "${collect.selectedProducts.length}",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                              ),
-                            ),
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(211, 167, 255, 193),
-                                shape: BoxShape.circle
-                            ),
-                          ),
-                          IconButton(onPressed: () {},
-                            icon: Icon(Icons.add_shopping_cart,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: Text(
-                          "\$ ${collect.price}",
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
+            IconAppbar(),
+
           ],
           title: Text(
               "Home",
