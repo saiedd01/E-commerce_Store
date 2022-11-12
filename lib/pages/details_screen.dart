@@ -30,7 +30,7 @@ class _DetailsState extends State<Details> {
                 children: [
                   Container(
                     child: Text(
-                      "2",
+                      "0",
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
@@ -51,7 +51,7 @@ class _DetailsState extends State<Details> {
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Text(
-                  "\$25",
+                  "\$0",
                   style: TextStyle(
                     fontSize: 18,
                   ),
