@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 
 class Cart with ChangeNotifier {
   List selectedProducts = [];
+  double price = 0;
+
   add(Product items) {
     selectedProducts.add(items);
+    price += items.price;
+
     notifyListeners();
   }
 

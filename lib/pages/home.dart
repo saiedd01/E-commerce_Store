@@ -162,11 +162,11 @@ class Home extends StatelessWidget {
         ),
         appBar: AppBar(
           actions: [
-            Row(
-              children: [
-                Consumer<Cart>(
-                    builder: ((context, cartInstancee, child) {
-                      return Stack(
+            Consumer<Cart>(
+                builder: ((context, cartInstancee, child) {
+                  return Row(
+                    children: [
+                      Stack(
                         children: [
                           Container(
                             child: Text(
@@ -186,20 +186,19 @@ class Home extends StatelessWidget {
                             ),
                           ),
                         ],
-                      );
-                    })),
-
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: Text(
-                      "\$0",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ],
-            )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          "\$ ${cartInstancee.price}",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                })),
           ],
           title: Text(
               "Home",
