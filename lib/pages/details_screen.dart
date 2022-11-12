@@ -165,7 +165,7 @@ class _DetailsState extends State<Details> {
             SizedBox(height: 15,),
 
             Text(
-                "Argentina’s home kit for the 2022 World Cup, designed by adidas, takes inspiration from the nation's historic winning ways. The shirt features stripes across the top in the country’s traditional white and baby blue colour scheme and navy blue accents throughout, including the classic three-stripe stamp on the garment.",
+                "In contrast to all previous World Cups, the Qatar World Cup takes place in the winter of the northern hemisphere. Therefore, Adidas, Nike, and Puma launched their kits later than usual. The first 2022 World Cup kits were launched by Puma in late May 2022. Adidas and Nike followed in August and September 2022.ONLY 6 TEAMS ARE NOT SUPPLIED BY ADIDAS, NIKE, OR PUMAThe 2022 World Cup kits bring us new jerseys for all teams except Canada, who keep their teamwear-based Nike kits as they are on a different kit development cycle.Adidas, Nike, Puma, and the smaller brands designed bespoke kits for all of their teams - they are no teamwear jerseys on stage except those of the Canadian football team.",
             style: TextStyle(
                 fontSize: 20
             ),
