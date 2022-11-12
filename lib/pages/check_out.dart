@@ -16,9 +16,7 @@ class CheckOut extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-
           IconAppbar(),
-
         ],
         title: Text(
           "Check Out",
@@ -27,8 +25,8 @@ class CheckOut extends StatelessWidget {
           ),
         ),
         backgroundColor: appbar_Green,
-
       ),
+
     );
   }
 }

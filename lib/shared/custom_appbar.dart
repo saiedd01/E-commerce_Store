@@ -1,3 +1,4 @@
+import 'package:e_commerce/pages/check_out.dart';
 import 'package:e_commerce/provider/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,15 @@ class IconAppbar extends StatelessWidget {
                   shape: BoxShape.circle
               ),
             ),
-            IconButton(onPressed: () {},
+            IconButton(onPressed: ()
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CheckOut(),
+                ),
+              );
+            },
               icon: Icon(Icons.add_shopping_cart,
               ),
             ),
