@@ -1,6 +1,8 @@
 import 'package:e_commerce/model/product.dart';
+import 'package:e_commerce/provider/cart.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
 
@@ -24,44 +26,46 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Row(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    child: Text(
-                      "0",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
+          Consumer<Cart>(
+              builder: ((context, cartInstancee, child) {
+                return Row(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          child: Text(
+                            "${cartInstancee.selectedProducts.length}",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(211, 167, 255, 193),
+                              shape: BoxShape.circle
+                          ),
+                        ),
+                        IconButton(onPressed: () {},
+                          icon: Icon(Icons.add_shopping_cart,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Text(
+                        "\$ ${cartInstancee.price}",
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                     ),
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(211, 167, 255, 193),
-                        shape: BoxShape.circle
-                    ),
-                  ),
-                  IconButton(onPressed: () {},
-                    icon: Icon(Icons.add_shopping_cart,
-                    ),
-                  ),
-                ],
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Text(
-                  "\$0",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ],
-          )
+                  ],
+                );
+              })),
         ],
         title: Text(
-          "Details Screen",
+          "Home",
           style: TextStyle(
             fontSize: 18,
           ),
