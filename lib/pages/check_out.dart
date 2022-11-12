@@ -10,7 +10,7 @@ class CheckOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    Product cart;
     final collect = Provider.of<Cart>(context);
 
     return Scaffold(
@@ -25,6 +25,34 @@ class CheckOut extends StatelessWidget {
           ),
         ),
         backgroundColor: appbar_Green,
+      ),
+      body: Column(
+        children: [
+          SingleChildScrollView(
+            child: Container(
+              height: 660,
+              child: ListView.builder(
+                padding: EdgeInsets.all(4),
+                itemCount: collect.selectedProducts.length,
+                itemBuilder: (BuildContext context, int index){
+                  return Card(
+                    child: ListTile(
+                      title: Text(collect.selectedProducts[index].name),
+                      subtitle: Text(
+                          "${collect.selectedProducts[index].price}"),
+                      leading: CircleAvatar(
+                        backgroundImage:AssetImage(collect.selectedProducts[index].imgPath),
+                        backgroundColor: Colors.white.withOpacity(0.5),),
+                      trailing: IconButton(
+                          onPressed: () { },
+                          icon: Icon(Icons.remove)),
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
+        ],
       ),
 
     );
