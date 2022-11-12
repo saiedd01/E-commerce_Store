@@ -55,70 +55,103 @@ class Details extends StatelessWidget {
 
       ),
 
-      body: Column(
-        children: [
-          Image.asset("assets/img/Ag.png"),
-          SizedBox(height: 11,),
-          Text(
-              "\$12.5",
-            style: TextStyle(
-              fontSize: 20,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset("assets/img/Ag.png"),
+            SizedBox(height: 11,),
+            Text(
+                "\$12.5",
+              style: TextStyle(
+                fontSize: 20,
+              ),
             ),
-          ),
-          SizedBox(height: 16,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(4),
-                  child: Text(
-                    "New",
-                    style: TextStyle(
-                      fontSize: 15,
+            SizedBox(height: 16,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(4),
+                    child: Text(
+                      "New",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 255, 129, 129),
+                      borderRadius: BorderRadius.circular(4),
                     ),
                   ),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 129, 129),
-                    borderRadius: BorderRadius.circular(4),
+                  SizedBox(width: 8,),
+
+                  Row(
+                    children: [
+                      Icon(Icons.star,
+                        size: 26,
+                        color: Color.fromARGB(255, 255, 191, 0),
+                      ),
+
+                      Icon(Icons.star,
+                        size: 26,
+                        color: Color.fromARGB(255, 255, 191, 0),
+                      ),
+
+                      Icon(Icons.star,
+                        size: 26,
+                        color: Color.fromARGB(255, 255, 191, 0),
+                      ),
+
+                      Icon(Icons.star,
+                        size: 26,
+                        color: Color.fromARGB(255, 255, 191, 0),
+                      ),
+
+                      Icon(Icons.star,
+                        size: 26,
+                        color: Color.fromARGB(255, 255, 191, 0),
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(width: 8,),
+                  Spacer(),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on_outlined,
+                        size: 26,
+                        color: Color.fromARGB(168, 3, 65, 27),
+                      ),
 
-                Row(
-                  children: [
-                    Icon(Icons.star,
-                      size: 26,
-                      color: Color.fromARGB(255, 255, 191, 0),
-                    ),
+                      SizedBox(width: 4,),
 
-                    Icon(Icons.star,
-                      size: 26,
-                      color: Color.fromARGB(255, 255, 191, 0),
-                    ),
+                      Text(
+                        "Energy Store",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                      ),
+                    ],
+                  ),
 
-                    Icon(Icons.star,
-                      size: 26,
-                      color: Color.fromARGB(255, 255, 191, 0),
-                    ),
-
-                    Icon(Icons.star,
-                      size: 26,
-                      color: Color.fromARGB(255, 255, 191, 0),
-                    ),
-
-                    Icon(Icons.star,
-                      size: 26,
-                      color: Color.fromARGB(255, 255, 191, 0),
-                    ),
-
-                  ],
-                ),
-
-              ],
+                ],
+              ),
             ),
-          )
-        ],
+            SizedBox(height: 15,),
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                  "Details :",
+                style: TextStyle(fontSize: 20),
+                //textAlign: TextAlign.start,
+              ),
+            ),
+            SizedBox(height: 15,),
+
+
+          ],
+        ),
       ),
     );
 
