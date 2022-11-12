@@ -23,18 +23,18 @@ class _DetailsState extends State<Details> {
 
   @override
   Widget build(BuildContext context) {
+    final collect = Provider.of<Cart>(context);
+
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Consumer<Cart>(
-              builder: ((context, cartInstancee, child) {
-                return Row(
+           Row(
                   children: [
                     Stack(
                       children: [
                         Container(
                           child: Text(
-                            "${cartInstancee.selectedProducts.length}",
+                            "${collect.selectedProducts.length}",
                             style: TextStyle(
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
@@ -54,15 +54,14 @@ class _DetailsState extends State<Details> {
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Text(
-                        "\$ ${cartInstancee.price}",
+                        "\$ ${collect.price}",
                         style: TextStyle(
                           fontSize: 18,
                         ),
                       ),
                     ),
                   ],
-                );
-              })),
+                ),
         ],
         title: Text(
           "Home",
