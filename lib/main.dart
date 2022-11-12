@@ -2,7 +2,9 @@ import 'package:e_commerce/pages/details_screen.dart';
 import 'package:e_commerce/pages/home.dart';
 import 'package:e_commerce/pages/login.dart';
 import 'package:e_commerce/pages/register.dart';
+import 'package:e_commerce/provider/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -15,9 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
+    return  ChangeNotifierProvider(
+      create: (context){
+        return Cart();
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+      ),
     );
   }
 }
