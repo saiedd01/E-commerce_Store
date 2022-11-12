@@ -1,4 +1,5 @@
 import 'package:e_commerce/model/product.dart';
+import 'package:e_commerce/pages/details_screen.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,15 @@ class Home extends StatelessWidget {
           itemCount: Products.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
-              onTap: () {} ,
+              onTap: ()
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Details(photo: Products[index]),
+                  ),
+                );
+              },
               child: GridTile(
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
@@ -31,7 +40,7 @@ class Home extends StatelessWidget {
                      color: Colors.black,
                      icon: Icon(Icons.add),
                  ),
-                 leading: Text("\$12.5"),
+                 leading: Text("\$ ${Products[index].price}"),
                  title: Text(
                    "",
                  ),
