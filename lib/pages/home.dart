@@ -1,7 +1,9 @@
 import 'package:e_commerce/model/product.dart';
 import 'package:e_commerce/pages/details_screen.dart';
+import 'package:e_commerce/provider/cart.dart';
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -35,11 +37,17 @@ class Home extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(Products[index].imgPath)),
                footer: GridTileBar(
-                 trailing: IconButton(
-                     onPressed: (){},
-                     color: Colors.black,
-                     icon: Icon(Icons.add),
-                 ),
+                 trailing: Consumer<Cart>(
+                     builder: ((context, collect, child) {
+                       return IconButton(
+                         onPressed: (){
+                           collect.add(Products[index]);
+                         },
+                         color: Colors.black,
+                         icon: Icon(Icons.add),
+                       );
+                     })),
+
                  leading: Text("\$ ${Products[index].price}"),
                  title: Text(
                    "",
@@ -160,7 +168,7 @@ class Home extends StatelessWidget {
                   children: [
                     Container(
                       child: Text(
-                        "2",
+                        "0",
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
@@ -181,7 +189,7 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(
-                      "\$25",
+                      "\$0",
                     style: TextStyle(
                       fontSize: 18,
                     ),
