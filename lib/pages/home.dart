@@ -10,6 +10,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final collect = Provider.of<Cart>(context);
+
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -37,16 +39,14 @@ class Home extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(Products[index].imgPath)),
                footer: GridTileBar(
-                 trailing: Consumer<Cart>(
-                     builder: ((context, collect, child) {
-                       return IconButton(
+                 trailing:
+                 IconButton(
                          onPressed: (){
                            collect.add(Products[index]);
                          },
                          color: Colors.black,
                          icon: Icon(Icons.add),
-                       );
-                     })),
+                       ),
 
                  leading: Text("\$ ${Products[index].price}"),
                  title: Text(
@@ -162,15 +162,13 @@ class Home extends StatelessWidget {
         ),
         appBar: AppBar(
           actions: [
-            Consumer<Cart>(
-                builder: ((context, cartInstancee, child) {
-                  return Row(
+                   Row(
                     children: [
                       Stack(
                         children: [
                           Container(
                             child: Text(
-                              "${cartInstancee.selectedProducts.length}",
+                              "${collect.selectedProducts.length}",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 0, 0, 0),
                               ),
@@ -190,15 +188,14 @@ class Home extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: Text(
-                          "\$ ${cartInstancee.price}",
+                          "\$ ${collect.price}",
                           style: TextStyle(
                             fontSize: 18,
                           ),
                         ),
                       ),
                     ],
-                  );
-                })),
+                  ),
           ],
           title: Text(
               "Home",
