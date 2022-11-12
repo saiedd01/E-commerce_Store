@@ -1,4 +1,5 @@
 import 'package:e_commerce/model/product.dart';
+import 'package:e_commerce/pages/check_out.dart';
 import 'package:e_commerce/pages/details_screen.dart';
 import 'package:e_commerce/provider/cart.dart';
 import 'package:e_commerce/shared/colors.dart';
@@ -120,7 +121,15 @@ class Home extends StatelessWidget {
                       leading: Icon(Icons.add_shopping_cart,
                       color: Colors.cyan,
                       ),
-                      onTap: () {}
+                      onTap: ()
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CheckOut(),
+                          ),
+                        );
+                      }
                   ),
                   ListTile(
                       title: Text(
