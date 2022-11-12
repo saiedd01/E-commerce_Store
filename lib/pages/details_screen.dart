@@ -66,24 +66,57 @@ class Details extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16,),
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(4),
-                child: Text(
-                  "New",
-                  style: TextStyle(
-                    fontSize: 12,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(4),
+                  child: Text(
+                    "New",
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 129, 129),
+                    borderRadius: BorderRadius.circular(4),
                   ),
                 ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 129, 129),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              ),
-              SizedBox(width: 8,),
+                SizedBox(width: 8,),
 
-            ],
+                Row(
+                  children: [
+                    Icon(Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+
+                    Icon(Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+
+                    Icon(Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+
+                    Icon(Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+
+                    Icon(Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+
+                  ],
+                ),
+
+              ],
+            ),
           )
         ],
       ),
