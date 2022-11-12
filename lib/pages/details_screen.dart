@@ -149,6 +149,15 @@ class Details extends StatelessWidget {
             ),
             SizedBox(height: 15,),
 
+            Text(
+                "Argentina’s home kit for the 2022 World Cup, designed by adidas, takes inspiration from the nation's historic winning ways. The shirt features stripes across the top in the country’s traditional white and baby blue colour scheme and navy blue accents throughout, including the classic three-stripe stamp on the garment.",
+            style: TextStyle(
+                fontSize: 16
+            ),
+              maxLines: 3,
+              overflow: TextOverflow.fade ,
+
+            ),
 
           ],
         ),
