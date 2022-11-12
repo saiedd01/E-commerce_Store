@@ -1,8 +1,14 @@
 import 'package:e_commerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class Details extends StatelessWidget {
-  const Details({Key? key}) : super(key: key);
+class Details extends StatefulWidget {
+  @override
+  State<Details> createState() => _DetailsState();
+}
+
+class _DetailsState extends State<Details> {
+  //const Details({Key? key}) : super(key: key);
+  bool isShowmore = true;
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +149,7 @@ class Details extends StatelessWidget {
               width: double.infinity,
               child: Text(
                   "Details :",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 22),
                 //textAlign: TextAlign.start,
               ),
             ),
@@ -152,11 +158,24 @@ class Details extends StatelessWidget {
             Text(
                 "Argentina’s home kit for the 2022 World Cup, designed by adidas, takes inspiration from the nation's historic winning ways. The shirt features stripes across the top in the country’s traditional white and baby blue colour scheme and navy blue accents throughout, including the classic three-stripe stamp on the garment.",
             style: TextStyle(
-                fontSize: 16
+                fontSize: 20
             ),
-              maxLines: 3,
+              maxLines: isShowmore ? 3 : null,
               overflow: TextOverflow.fade ,
-
+            ),
+            TextButton(
+              onPressed: ()
+              {
+                setState(() {
+                  isShowmore = !isShowmore;
+                });
+              },
+                child: Text(
+                  isShowmore ? "Show more" : "Show less",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                ),
             ),
 
           ],
